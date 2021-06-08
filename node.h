@@ -11,8 +11,8 @@ class Node
 
     public:
     
-    Node(Node<T> * next, Node<T> * prev, T value) : next(next), prev(prev), value(value){}
-    Node( T value) : Node(value, nullptr, nullptr){}
+    Node(Node<T> * next, Node<T> * prev, T value) : next(next), prev(prev), value(value) {}
+    Node(T value) : Node(nullptr, nullptr, value) {}
 
     Node<T> * getNext()
     {
