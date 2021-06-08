@@ -71,6 +71,12 @@ class list
 
     void printList()
     {
+        if(head == nullptr)
+        {
+            cout<<"lista vuota ";
+            return;
+        }
+
         Node<T> * p = head;
         while(p != nullptr)
         {
@@ -84,6 +90,12 @@ class list
     Node<T> * search(T x)
     {
         Node<T> * s = head;
+        if(head == nullptr)
+        {
+            cout<<"la lista e' vuota ";
+            return nullptr;
+        }
+
         while(s != nullptr)
         {
             if(s->getValue() == x)
@@ -92,12 +104,17 @@ class list
             }
             s = s->getNext();
         }
-        cout<<endl;
+
         return s;
     }
 
     Node<T> * remove(T x)
     {
+        if(head == nullptr)
+        {
+            return nullptr;
+        }
+
         if(head->getValue() == x)
         {
             Node<T> * DeleteNode = head;
@@ -133,6 +150,11 @@ class list
             }
         }
         return nullptr;
+    }
+
+    bool isEmpty()
+    {
+        return head == nullptr;
     }
 
 
